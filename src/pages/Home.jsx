@@ -1,10 +1,18 @@
+import logements from '../data/logements.json';
+import Card from '../components/Card';
+import Banner from '../components/Banner';
+
 function Home() {
-    return (
-      <div>
-        <h1>Bienvenue sur la page d'accueil</h1>
+  return (
+    <div>
+      <Banner />
+      <div className="cards-container">
+        {logements.map((logement) => (
+          <Card key={logement.id} title={logement.title} cover={logement.cover} />
+        ))}
       </div>
-    );
-  }
-  
-  export default Home;
-  
+    </div>
+  );
+}
+
+export default Home;
