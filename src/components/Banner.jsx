@@ -1,10 +1,8 @@
-import oceanBanner from '../assets/ocean.svg';  // Chemin correct vers ton image
-
-function Banner() {
+function Banner({ imageSrc, altText, hideText = false }) {
   return (
     <div className="banner">
-      <img src={oceanBanner} alt="Bannière Océan" className="banner-image" />
-      <h1 className="banner-text">Chez vous, partout et ailleurs</h1>
+      <img src={imageSrc} alt={altText} className="banner-image" />
+      {!hideText && <h1 className="banner-text">Chez vous, partout et ailleurs</h1>}
     </div>
   );
 }

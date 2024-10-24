@@ -99,6 +99,48 @@ nav ul li a {
     color: white;
     font-size: 18px;
   }
+
+
+  /*About*/
+
+  .collapse {
+    margin-bottom: 20px;
+  }
+  
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FF6060;  /* Couleur de la barre */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .collapse-content {
+    padding: 10px;
+    background-color: #f9f9f9;  /* Couleur du fond du texte */
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    transition: transform 0.3s ease;  /* Animation de rotation */
+  }
+  
+  .arrow-icon.open {
+    transform: rotate(180deg);  /* Rotation de la flèche lorsqu'elle est ouverte */
+  }
+  
+  
+  .banner {
+    width: 1240px;
+    height: 223px;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+  
   
 
 
