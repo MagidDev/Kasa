@@ -16,7 +16,12 @@ function Home() {
       <div className="cards-container">
         {/* Affichage des cards pour chaque logement */}
         {logements.map((logement) => (
-          <Card key={logement.id} title={logement.title} cover={logement.cover} />
+          <Card
+            key={logement.id}
+            id={logement.id} // Passe l'ID pour la route
+            title={logement.title}
+            cover={logement.cover}
+          />
         ))}
       </div>
     </div>
