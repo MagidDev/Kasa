@@ -1,7 +1,7 @@
 import logements from '../data/logements.json';
 import Card from '../components/Card';
 import Banner from '../components/Banner';
-import oceanBanner from '../assets/ocean.svg'; // Import de l'image spécifique pour la bannière
+import oceanBanner from '../assets/ocean.svg';
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
         imageSrc={oceanBanner} // Image de la bannière
         altText="Bannière Océan" // Texte alternatif pour l'accessibilité
         bannerText="Chez vous, partout et ailleurs" // Texte affiché sur la bannière
-        className="dark-banner" // Classe pour ajouter l'effet sombre si nécessaire
+        bannerClassName="banner" // Classe pour ajouter l'effet sombre si nécessaire
       />
       <div className="cards-container">
         {/* Affichage des cards pour chaque logement */}

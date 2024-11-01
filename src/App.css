@@ -1,17 +1,27 @@
 html, body {
-  height: 100%; /* Assure que la page occupe toute la hauteur de l'écran */
-  margin: 0;
+  height: 100%;
 }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p {
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* L'élément root prend toute la hauteur de la fenêtre */
+  min-height: 100vh;
 }
 
-main {
-    flex-grow: 1;
-}
 
 /* Header*/
 
@@ -21,87 +31,136 @@ header {
   align-items: center;
   padding: 20px;
   background-color: #fff;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .logo img {
-  height: 40px;  /* Ajustez la taille du logo selon le besoin */
+  height: 60px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  font-size: 24px;
 }
 
-nav ul li {
+nav li {
   font-size: 18px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #333;
+  font-size: 24px;
+  font-weight: 500;
 }
+
+.active-link {
+  text-decoration: underline; /* Souligne le lien actif */
+  font-weight: bold; /* Optionnel : mettre le texte en gras */
+}
+
 
 
 /*main*/
 
+main {
+  flex-grow: 1;
+  min-height: calc(100vh - 230px);
+}
+
 .banner {
     position: relative;
     width: 100%;
+    max-width: 1240px;
     height: 223px;
     border-radius: 25px;
     overflow: hidden;
-  }
-  
-  .banner img {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.banner img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7); /* Effet assombri */
-  }
-  
-  .banner-text {
+    filter: brightness(0.5);
+    border-radius: 25px;
+}
+
+.banner-text {
     position: absolute;
     color: white;
-    font-size: 24px;
-    bottom: 20px;
-    left: 20px;
-  }
-  
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    font-size: clamp(24px, 4vw, 48px);
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1240px;
+    gap: 35px 10px;
+    justify-items: center;
     background-color: #f5f5f5;
-  }
-  
-  .card {
-    width: 340px;
-    height: 340px;
+    margin: 35px auto;
+    border-radius: 25px;
+    padding: 35px 15px;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-  }
-  
-  .card-image {
+}
+
+.card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .card-title {
+}
+
+.card-title {
     position: absolute;
     bottom: 20px;
     left: 20px;
     color: white;
     font-size: 18px;
-  }
+}
+
 
 
   /*About*/
+
+  .about-collapse .collapse {
+    width: 80%;
+    margin: 0 auto 20px auto;
+  }
+  
+  .about-collapse .collapse-header {
+    background-color: #FF6060;
+    font-size: 18px;
+  }
+  
+  .about-collapse .collapse-content {
+    font-size: 16px;
+    padding: 15px;
+  }
+
 
   .collapse {
     margin-bottom: 20px;
@@ -110,57 +169,75 @@ nav ul li a {
   .collapse-header {
     display: flex;
     justify-content: space-between;
-    background-color: #FF6060;  /* Couleur de la barre */
+    background-color: #FF6060;
     color: white;
-    padding: 15px;
+    padding-left: 20px;
+    height: 52px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding-right: 10px;
   }
   
   .collapse-content {
     padding: 10px;
-    background-color: #f9f9f9;  /* Couleur du fond du texte */
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 0 0 5px 5px;
   }
   
+  .collapse li {
+    list-style: none;
+  }
+
   .arrow-icon {
-    width: 20px;
-    transition: transform 0.3s ease;  /* Animation de rotation */
+    width: 30px;
+    transition: transform 0.3s ease;
+    margin-left: -5px;
   }
   
   .arrow-icon.open {
-    transform: rotate(180deg);  /* Rotation de la flèche lorsqu'elle est ouverte */
+    transform: rotate(180deg);
   }
   
   
-  .banner {
-    width: 1240px;
+  .banner-about {
+    width: 100%;
+    max-width: 1240px;
+    min-width: 335px;
     height: 223px;
     border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .banner-about img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
+  
   
 /*Not Found*/
 
 .notfound-container {
   text-align: center;
-  margin-top: 100px; /* Ajustez selon la mise en page globale */
+  margin-top: 100px;
 }
 
 .notfound-title {
-  font-size: 288px;
+  font-size: clamp(48px, 10vw, 288px);
   color: #FF6060;
 }
 
 .notfound-message {
-  font-size: 36px;
+  font-size: clamp(18px, 4vw, 36px);
   color: #FF6060;
 }
 
 .notfound-link {
   font-size: 18px;
-  color: #FF6060;
+  color: black;
   text-decoration: underline;
   margin-top: 20px;
   display: inline-block;
@@ -170,10 +247,11 @@ nav ul li a {
 
 .slideshow-container {
   position: relative;
-  width: 1240px;
+  width: 90%;
   height: 415px;
   border-radius: 25px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .slideshow-image {
@@ -187,8 +265,8 @@ nav ul li a {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 
 .arrow-left {
@@ -217,16 +295,19 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  margin: 0 90px;
 }
 
 .logement-title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 36px;
+  font-weight: 500;
+  color: #FF6060;
 }
 
 .logement-location {
-  margin-top: 5px;
-  color: #666;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .logement-tags {
@@ -242,6 +323,7 @@ nav ul li a {
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 14px;
+  font-weight: 700;
 }
 
 .logement-host {
@@ -252,6 +334,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top: 40px;
 }
 
 .host-name {
@@ -266,17 +349,14 @@ nav ul li a {
 
 .logement-rating {
   margin-top: 10px;
+  white-space: nowrap;
 }
 
-.star-icon {
-  width: 20px;
-  height: 20px;
-}
 
 .logement-collapses {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .collapse {
@@ -284,22 +364,31 @@ nav ul li a {
 }
 
 .star-icon {
-  width: 24px;  /* Ajuste la taille ici si nécessaire */
+  width: 24px; 
   height: 24px;
   margin-right: 5px;
 }
 
 
+
 /*footer*/
 
-
 footer {
-    background-color: black; /* Fond noir pour le footer */
-    color: white; /* Texte en blanc */
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-  }
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  left: 50%; 
+  transform: translateX(-50%);
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 30px;
+}
+
+
+
   
   .footer-content {
     display: flex;
@@ -308,7 +397,7 @@ footer {
   }
   
   .logo-footer {
-    width: 100px;  /* Ajuste la taille du logo */
+    width: 100px;
     height: auto;
   }
   
@@ -316,4 +405,208 @@ footer {
     margin-top: 10px;
     font-size: 14px;
   }
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Passe à 2 colonnes */
+  }  
+
+}
+
+
+  /* Small devices (phones, less than 768px) */
+  @media (max-width: 767.99px) and (min-width: 320px) {
+
+    /* Accueil */
+
+    .logo img { 
+      height: 40px;
+      width: auto;
+    }
+
+    .cards-container {
+      grid-template-columns: 1fr; /* Passe à 1 colonne */
+    }
+
+    header {
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1px;
+      font-size: 12px;
+    }
+
+    nav ul li a {
+      margin: 0;
+      font-size: 12px;
+      gap: 10px;
+      padding: 5px;
+    }
+
+    .banner {
+      height: 111px;
+      border-radius: 10px;
+    }
+
+    .banner img {
+      border-radius: 10px;
+      min-width: 310px;
+    }
+
+    .banner-text {
+      position: absolute;
+      color: white;
+      bottom: 20%;
+      left: 5px;
+      transform: translateY(50%);
+      font-size: 24px;
+      text-align: left;
+      white-space: wrap;
+  }
+
+  /* Logement */
   
+  .logement-page {
+    padding: 0;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: 255px;
+    border-radius: 10px;
+  }
+
+  .arrow {
+    position: absolute;
+    height: 40px;
+    width: 35px;
+  }
+
+  .logement-details {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.logement-info {
+  display: block;
+  margin: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.logement-rating {
+  margin-top: -32px;
+  text-align: left; 
+  width: auto;
+  padding-left: 0;
+  display: block;
+  position: relative; 
+}
+
+.star-icon {
+  width: 13.41px;
+  height: 13px;
+}
+
+.host-info {
+  display: flex; 
+  align-items: center; 
+  margin-left: auto;
+  margin-top: 10px;
+  order: 2;
+}
+
+.host-name {
+    margin-right: 10px; 
+}
+
+.host-picture {
+  border-radius: 50%;
+    width: 42px;
+    height: 42px;
+}
+
+.logement-collapses {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  gap: 0px;
+}
+
+.collapse-header {
+  padding: 10px; 
+  cursor: pointer; 
+  height: 30px;
+  border-radius: 5px;
+}
+
+.collapse-header h3 {
+  margin-top: -1px; 
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+
+.collapse-content {
+  padding: 15px;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 0 0 5px 5px; 
+  display: block; 
+}
+
+.collapse.open .collapse-content {
+  max-height: 500px;
+}
+
+.arrow-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+}
+
+
+.collapse {
+  width: 100%; 
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+footer {
+  margin-top: 12%;
+  padding-top: 30px;
+}
+
+
+
+/* About */
+
+.banner-about {
+  width: 100%;
+  max-width: 1240px;
+  min-width: 290px;
+  height: 223px;
+  min-height: 111px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.about-collapse .collapse {
+  width: 100%;
+  margin: 0 auto 20px auto;
+  margin-bottom: 15%;
+}
+
+}

@@ -2,8 +2,8 @@ import logements from '../data/logements.json';
 import { useParams, Navigate } from 'react-router-dom';  // Importer Navigate pour la redirection
 import Slideshow from '../components/Slideshow';
 import Collapse from '../components/Collapse';
-import starFull from '../assets/star_ok.svg';  // Étoile colorée
-import starEmpty from '../assets/star.svg';     // Étoile grise
+import starFull from '../assets/star_ok.svg';
+import starEmpty from '../assets/star.svg';
 
 function Logement() {
   const { id } = useParams();
